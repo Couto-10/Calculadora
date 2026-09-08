@@ -6,89 +6,54 @@ const multiplicacao = document.querySelector(".multiplicacao");
 const divisao = document.querySelector(".divisao");
 const resultado = document.querySelector(".resultado");
 const mensagemErro = document.querySelector(".mensagemErro");
-const mensagemErroDivisao = document.querySelector(".mensagemErroDivisao");
 
-soma.addEventListener("click", function() {
-  const numero1 = (num1.value);
-  const numero2 = (num2.value);
-  if (numero1 === "" || numero2 === "") {
-  mensagemErro.textContent =  "⚠️ Atenção: Você precisa digitar os dois números!";
-  mensagemErro.style.display = "block";
-  resultado.textContent = "Resultado:";
-  }else {
-    mensagemErro.textContent = "";
-    mensagemErro.style.display = "none";
+function calcular(operacao) {
+  const valor1 = num1.value;
+  const valor2 = num2.value;
 
-    const numero1 = Number(num1.value);
-    const numero2 = Number(num2.value);
-    const totalOperacao = (numero1 + numero2);
-    resultado.textContent = ("Resultado: " + totalOperacao);
-  }
-
-
-
-})
-
-subtracao.addEventListener("click", function() {
-  const numero1 = (num1.value);
-  const numero2 = (num2.value);
-  if (numero1 === "" || numero2 === "") {
-    mensagemErro.textContent =  "⚠️ Atenção: Você precisa digitar os dois números!";
+  if (valor1 === "" || valor2 === "") {
+    mensagemErro.textContent = "⚠️ Atenção: Você precisa digitar os dois números!";
     mensagemErro.style.display = "block";
     resultado.textContent = "Resultado:";
-  }else {
-    mensagemErro.textContent = "";
-    mensagemErro.style.display = "none";
 
-    const numero1 = Number(num1.value);
-    const numero2 = Number(num2.value);
-    const totalOperacao = (numero1 - numero2);
-    resultado.textContent = ("Resultado: " + totalOperacao);
-
+    return;
   }
-})
 
-multiplicacao.addEventListener("click", function() {
-  const numero1 = (num1.value);
-  const numero2 = (num2.value);
-  if (numero1 === "" || numero2 === "") {
-    mensagemErro.textContent =  "⚠️ Atenção: Você precisa digitar os dois números!";
+  const numero1 = Number(num1.value);
+  const numero2 = Number(num2.value);
+
+  if (operacao === "/" && numero2 === 0) {
+    mensagemErro.textContent = "⚠️ Atenção: Não é possivel dividir por zero!"
     mensagemErro.style.display = "block";
     resultado.textContent = "Resultado:";
-  }else {
-    mensagemErro.textContent = "";
-    mensagemErro.style.display = "none";
 
-    const numero1 = Number(num1.value);
-    const numero2 = Number(num2.value);
-    const totalOperacao = (numero1 * numero2);
-    resultado.textContent = ("Resultado: " + totalOperacao);
-
+    return;
   }
+
+  mensagemErro.textContent = "";
+  mensagemErro.style.display = "none";
+
+  let totalOperacao = 0;
+
+  if (operacao === "+") totalOperacao = numero1 + numero2;
+  if (operacao === "-") totalOperacao = numero1 - numero2;
+  if (operacao === "*") totalOperacao = numero1 * numero2;
+  if (operacao === "/") totalOperacao = numero1 / numero2;
+
+  resultado.textContent = "Resultado: " + totalOperacao;
+
+
+}
+
+soma.addEventListener("click", function (){
+  calcular("+");
 })
-
-divisao.addEventListener("click", function() {
-  const numero1 = (num1.value);
-  const numero2 = (num2.value);
-  if (numero1 == 0 || numero2 == 0) {
-    mensagemErroDivisao.textContent =  "⚠️ Atenção: Você precisa digitar um número maior que 0!";
-    mensagemErroDivisao.style.display = "block";
-    resultado.textContent = "Resultado:";
-  }else {
-    mensagemErroDivisao.textContent = "";
-    mensagemErroDivisao.style.display = "none";
-    const numero1 = Number(num1.value);
-    const numero2 = Number(num2.value);
-    const totalOperacao = (numero1 / numero2);
-    resultado.textContent = ("Resultado: " + totalOperacao);
-  }
-  if (numero1 === "" || numero2 === "") {
-    mensagemErro.textContent =  "⚠️ Atenção: Você precisa digitar os dois números!";
-    mensagemErro.style.display = "block";
-    resultado.textContent = "Resultado:";
-  }else {
-    mensagemErro.textContent = "";
-    mensagemErro.style.display = "none";
-
-  }
+subtracao.addEventListener("click", function (){
+  calcular("-");
+})
+multiplicacao.addEventListener("click", function (){
+  calcular("*");
+})
+divisao.addEventListener("click", function (){
+  calcular("/");
 })
