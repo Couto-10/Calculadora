@@ -30,6 +30,9 @@ Para deixar o código limpo, legível e fácil de manter, eu centralizei toda a 
 * **Early Return (Retorno Precoce):** Usei o comando `return` estrategicamente para parar a função imediatamente caso ocorra um erro, eliminando blocos `else` gigantes.
 * **Manutenibilidade:** Se eu precisar mudar a mensagem de erro ou adicionar uma função nova hoje, mudo em apenas um lugar.
 
+### Atualização Futura
+
+* **Melhora a Interface:** Atualmente você precisa digitar os números, mas futuramente poderá digitar ou escolher pelos botões.
 ---
 
 ## 🛠️ Tecnologias Utilizadas
