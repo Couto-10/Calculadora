@@ -1,57 +1,149 @@
-# 🧮 Calculadora JS — Evolução, Lógica & Refatoração
+# 🧮 Calculadora Web
 
-Um projeto de calculadora desenvolvido para praticar a manipulação avançada do **DOM (Document Object Model)** com JavaScript puro (Vanilla JS), HTML5 e CSS3.
 
-O grande diferencial deste repositório é o registro da minha evolução técnica. O projeto foi dividido em duas fases: a primeira focada em organização de código (V1) e a segunda focada em UX e gerenciamento de estado (V2).
 
----
+Calculadora desenvolvida com **HTML, CSS e JavaScript**, criada inicialmente como um exercício de manipulação do DOM e posteriormente evoluída para uma interface semelhante a uma calculadora convencional.
 
-## 🚀 O Projeto & Recursos
+O projeto faz parte dos meus estudos em Desenvolvimento de Sistemas e foi utilizado para praticar lógica de programação, eventos, manipulação do DOM e controle de estado com JavaScript.
 
-A calculadora realiza as quatro operações matemáticas básicas (Soma, Subtração, Multiplicação e Divisão) e conta com duas interfaces distintas que marcam meu aprendizado:
+## 🚀 Teste aqui
 
-*   **Interface V1 (Inputs):** Sistema baseado em campos de texto onde o usuário digita os valores isolados.
-*   **Interface V2 (Teclado Numérico):** Layout moderno em formato de grade (Grid), simulando uma calculadora real onde os fluxos de cliques constroem a expressão matemática.
-*   **Alternador de Tema (Dark/Light Mode):** Integração entre JavaScript e variáveis CSS para manipulação de classes e customização visual.
-
-## Teste Aqui: https://couto-10.github.io/Calculadora/
----
-
-## 🧠 O Aprendizado Técnico (Antes vs. Depois)
-
-### ❌ Como o código começou (V1)
-Na primeira versão, criei um escutador de eventos (`addEventListener`) diferente para cada botão de operação. Isso fez com que a lógica de validação se repetisse quatro vezes no arquivo, ferindo o princípio **DRY (Don't Repeat Yourself)**.
-
-###  Como o código ficou (Refatorado)
-Para deixar o código limpo, legível e escalável, centralizei a execução em uma **única função genérica** chamada `calcular(operacao)`.
-*   **Uso de Parâmetros:** A função recebe o símbolo da operação dinamicamente.
-*   **Early Return (Retorno Precoce):** Uso estratégico do `return` para interromper a função imediatamente caso ocorra um erro (como campos vazios), eliminando blocos `else` aninhados e gigantes.
+👉 https://couto-10.github.io/Calculadora/
 
 ---
 
-## 🛠️ Desafios Técnicos Superados na Versão Clássica (V2)
+## 📸 Sobre o projeto
 
-A transição para o layout de teclado numérico (V2) trouxe desafios de lógica muito mais complexos do que a versão inicial:
+A primeira versão da calculadora utilizava dois campos de entrada onde o usuário digitava os números e escolhia a operação.
 
-*   **Gerenciamento de Estado:** Controlar internamente o número atual, o número anterior e o operador selecionado sem perder o histórico do cálculo.
-*   **Delegação de Eventos (Event Delegation):** Capturar os cliques no teclado numérico de forma eficiente utilizando um único escutador no container principal, em vez de aplicar um evento para cada botão individual.
-*   **Tratamento de Strings e Limpeza:** Implementar a lógica do botão de *Backspace* (apagar último caractere) e reset total dos dados após a execução do sinal de igual (`=`).
+Na segunda versão, o projeto foi reconstruído com uma interface de calculadora, permitindo que os números sejam inseridos através dos próprios botões da aplicação.
+
+### Versão 1
+
+- Dois campos para entrada de números
+- Soma
+- Subtração
+- Multiplicação
+- Divisão
+- Exibição do resultado na página
+
+### Versão 2
+
+- Teclado numérico
+- Soma, subtração, multiplicação e divisão
+- Botão de resultado (`=`)
+- Botão para apagar o último dígito (`⌫`)
+- Validação de operações incompletas
+- Tratamento de divisão por zero
+- Bloqueio de operadores em momentos inválidos
+- Reinício automático para uma nova operação
+- Alternância de tema
+- Mensagens de erro para entradas inválidas
+
+---
+## 📈 Evolução do projeto
+
+### Este projeto foi iniciado como uma calculadora simples para praticar operações com JavaScript.
+
+Durante os estudos, a aplicação foi reconstruída para trabalhar com uma interface mais próxima de uma calculadora real.
+
+Essa evolução exigiu trabalhar com conceitos como:
+
+Estado da aplicação
+Entrada de números através de botões
+Diferenciação entre primeiro e segundo número
+Controle do operador selecionado
+Validação de ações do usuário
+Atualização dinâmica da interface
+
+O objetivo do projeto é registrar minha evolução no aprendizado de JavaScript e desenvolvimento web.
+---
+
+---
+## 🧠 Conceitos praticados
+
+Durante o desenvolvimento do projeto, foram praticados conceitos como:
+
+- Manipulação do DOM
+- `querySelector()` e `querySelectorAll()`
+- Eventos com `addEventListener()`
+- Percorrer elementos com `forEach()`
+- Manipulação de texto com `textContent`
+- Conversão de strings para números com `Number()`
+- Condicionais com `if` e `else`
+- Funções
+- Variáveis de estado
+- Manipulação de strings com `slice()`
+- Manipulação de classes CSS com JavaScript
+- Validação de dados
+- Tratamento de casos especiais
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## ⚙️ Como a calculadora funciona
 
-*   **HTML5:** Estruturação semântica da interface.
-*   **CSS3 (Flexbox & Grid):** Construção do layout responsivo e transições de tema.
-*   **JavaScript (ES6+):** Manipulação dinâmica do DOM, lógica de eventos e tratamento de estados.
-*   **Git & GitHub:** Controle de versão e histórico de commits demonstrando a evolução do código.
+A aplicação mantém algumas informações em memória durante a operação:
+
+1. O primeiro número digitado
+2. O operador selecionado
+3. O segundo número digitado
+4. O resultado da operação
+
+Exemplo:
+
+```text
+12
+↓
+primeiro número
+
++
+↓
+operador
+
+5
+↓
+segundo número
+
+=
+↓
+17
+
+````
 
 ---
 
-## 🔧 Como Rodar o Projeto
+## 🛠️ Tecnologias utilizadas
+- HTML5
+- CSS3
+- JavaScript
+- Git
+- GitHub
+- GitHub Pages
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com
-   ```
-2. Abra o arquivo `index.html` diretamente no seu navegador.
+---
+
+
+## 📂 Como executar o projeto
+
+### Clone o repositório:
+
+````
+git clone https://github.com/Couto-10/Calculadora.git
+
+
+Entre na pasta do projeto:
+
+cd Calculadora
+
+Depois, abra o arquivo index.html no navegador.
+
+Também é possível utilizar uma extensão como Live Server ou executar o projeto diretamente pela IDE.
+
+````
+
+### 👨‍💻 Autor
+
+- Desenvolvido por Marcelo Resende Reis.
+
+
+
