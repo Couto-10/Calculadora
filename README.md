@@ -14,6 +14,7 @@ A calculadora realiza as quatro operações matemáticas básicas (Soma, Subtra�
 *   **Interface V2 (Teclado Numérico):** Layout moderno em formato de grade (Grid), simulando uma calculadora real onde os fluxos de cliques constroem a expressão matemática.
 *   **Alternador de Tema (Dark/Light Mode):** Integração entre JavaScript e variáveis CSS para manipulação de classes e customização visual.
 
+## Teste Aqui: https://couto-10.github.io/Calculadora/
 ---
 
 ## 🧠 O Aprendizado Técnico (Antes vs. Depois)
